@@ -34,6 +34,7 @@ class BankKonto:
 def main():
     HHermansen = Person("Hege", "Hermansen", "12309192")
     konto = BankKonto(HHermansen,"1020.30.45678")
+    assert konto.saldo == 0, "Saldo må være satt til 0 ved start"
     print(konto)
     konto.sett_inn_penger(10)
 if __name__ == '__main__':

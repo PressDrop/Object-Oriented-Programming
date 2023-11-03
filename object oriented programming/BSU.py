@@ -20,6 +20,7 @@ def main():
     HHermansen = Person("Hege", "Hermansen", "12309192")
     bsu_konto = BSU(HHermansen,"1020.30.45678", 10000)
     print(bsu_konto)
+    assert bsu_konto.saldo == 0, "Saldo må være satt til 0 ved start"
     bsu_konto.sett_inn_penger(10001)
     bsu_konto.ta_ut_penger(10001)
     bsu_konto.sett_inn_penger(10)

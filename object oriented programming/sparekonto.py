@@ -21,6 +21,7 @@ def main():
     HHermansen = Person("Hege", "Hermansen", "12309192")
     spare_konto = SpareKonto(HHermansen,"1020.30.45678", 11)
     print(spare_konto)
+    assert spare_konto.saldo == 0, "Saldo må være satt til 0 ved start"
     spare_konto.sett_inn_penger(10)
     for i in range(11):
         spare_konto.ta_ut_penger(1)
