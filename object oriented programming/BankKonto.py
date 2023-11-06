@@ -1,4 +1,4 @@
-from person import Person
+from Person import Person
 class BankKonto:
     def __init__(self, eier: Person, kontonummer: int):
         self.eier = f"{eier.fornavn} {eier.etternavn}"

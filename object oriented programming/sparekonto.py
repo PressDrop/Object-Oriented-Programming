@@ -1,5 +1,5 @@
-from main import BankKonto
-from person import Person
+from BankKonto import BankKonto
+from Person import Person
 class SpareKonto(BankKonto):
     def __init__(self, eier: Person, kontonummer:str, maks_antall_uttak:int):
         super().__init__(eier, kontonummer)

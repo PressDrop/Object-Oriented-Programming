@@ -1,5 +1,5 @@
-from main import BankKonto
-from person import Person
+from BankKonto import BankKonto
+from Person import Person
 class BSU(BankKonto):
     def __init__(self, eier: Person, kontonummer:str, maksbeløp: float):
         super().__init__(eier, kontonummer)
@@ -22,9 +22,14 @@ def main():
     print(bsu_konto)
     assert bsu_konto.saldo == 0, "Saldo må være satt til 0 ved start"
     bsu_konto.sett_inn_penger(10001)
+    assert bsu_konto.saldo == 10001, "Saldoen må være det den er blitt satt til å være 0 + 10001"
     bsu_konto.ta_ut_penger(10001)
+    assert bsu_konto.saldo == 10001, "Du kan ikke ta ut mer enn penger enn du har satt maksbeløpet til å være"
     bsu_konto.sett_inn_penger(10)
+    assert bsu_konto.saldo == 10011
     bsu_konto.ta_ut_penger(10001)
+    assert bsu_konto.saldo == 10011, "Du kan fremdeles ikke ta ut mer"
     bsu_konto.ta_ut_penger(10000)
+    assert bsu_konto.saldo == 11, "Du skal kunne ta ut maksbeløpet"
 if __name__ == '__main__':
     main()
