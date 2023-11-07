@@ -1,0 +1,37 @@
+class Eier{
+    navn:str
+    Telefonnummer:int
+    bankkonto(er):list
+
+}
+class Bankkonto{
+    saldo:int
+    eier:str
+    Kontonummer:int
+
+
+    initKonto()
+    settInnPenger()
+    taUtPenger()
+
+}
+class Sparekonto{
+    antall_uttak:int
+    maks_antall_uttak:int
+    taUtPenger()
+
+}
+class BSUKonto{
+    maks_beløp:int
+    nåværende_beløp:int
+    taUtPenger()
+
+}
+
+
+Eier "1,2,,,"*-- Bankkonto
+
+
+Sparekonto --|> Bankkonto
+BSUKonto --|> Bankkonto
+
