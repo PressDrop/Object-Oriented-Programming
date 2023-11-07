@@ -8,7 +8,7 @@ class BankKonto:
         print(f"Nyoprettet konto:")
         print(" "*2, f"{'Eier'.ljust(10)} : {self.eier}") 
         print(" "*2, f"{'Kontonummer'.ljust(10)} : {self.kontonummer})") 
-        
+    #Hva som skal printes ut når du printer BankKonto objektet 
     def __str__(self) -> str:
         print("")
         return f"Konto: \n {' '*2} {'Eier'.ljust(10)} : {self.eier}  \n {' '*2} {'Kontonummer'.ljust(10)} : {self.kontonummer}  \n {' '*2} {'Saldo'.ljust(10)} : {self.saldo}"
