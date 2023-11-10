@@ -1,0 +1,24 @@
+class Fotballklubb{
+    lag: list
+}
+class Spiller{
+    posisjon:str
+}
+class Fotballlag0{
+    spillere:list
+    trener:Trener
+}
+class Fotballlag1{
+    spillere:list
+    trener:Trener
+}
+class Trener{
+    spesialisering:str
+}
+Spiller  --* "1*" Fotballlag0: Fotballlag[0]
+Trener --* "1"Fotballlag0: Fotballlag[0]
+Trener --o "1" Fotballlag1: Fotballlag[1*]
+
+Fotballlag0 --*"1" Fotballklubb
+Fotballlag1 --* "0*" Fotballklubb
+
