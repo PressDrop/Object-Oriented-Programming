@@ -42,7 +42,7 @@ class AssertionTests(unittest.TestCase):
         self.assertEqual(50, self.miriam_bankkonto.saldo)
 
     def test_bankonto_out_of_balance(self):
-        # Intial 
+        # Initial 
 
         #No futher inital requiered
 
@@ -56,9 +56,21 @@ class AssertionTests(unittest.TestCase):
         self.assertEqual(1, self.miriam_bankkonto.saldo)
         self.assertFalse(self.miriam_bankkonto.ta_ut_penger(11))
 
-    
+    def test_bankkonto_readonly(self):
+        # Initial
+
+        #No more initial
+
+        # Preparation
+        self.miriam_bankkonto.__saldo = 2
+
+        # Test
+
+        self.assertEqual(0, self.miriam_bankkonto.saldo)
+
+
+
 
 
 if __name__ == '__main__':
-    #unittest.main()
-    pass
+    unittest.main()

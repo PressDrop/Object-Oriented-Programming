@@ -3,19 +3,26 @@ from Person import Person
 class BSU(BankKonto):
     def __init__(self, eier: Person, kontonummer:str, maksbeløp: float):
         super().__init__(eier, kontonummer)
-        self.nåværende_beløp = 0
-        self.maksbeløp = maksbeløp
+        self.__nåværende_beløp = 0
+        self.__maksbeløp = maksbeløp
     def ta_ut_penger(self, beløp: int) -> bool:
-        if (self.nåværende_beløp+beløp) <= self.maksbeløp and beløp > 0:
+        if (self.__nåværende_beløp+beløp) <= self.__maksbeløp and beløp > 0:
             if super().ta_ut_penger(beløp):
-                self.nåværende_beløp += beløp
+                self.__nåværende_beløp += beløp
                 return True
         print("")
-        print(f"Du kan ikke gå over maksbeløpet {self.nåværende_beløp+beløp} som du har satt på kontoen {self.maksbeløp}")
+        print(f"Du kan ikke gå over maksbeløpet {self.__nåværende_beløp+beløp} som du har satt på kontoen {self.__maksbeløp}")
         return False
     def print_nåværende_beløp(self) -> None:
         print("")
-        print(f"Ditt nåværende_beløp er {self.nåværende_beløp} og maksbeløp er {self.maksbeløp}")
+        print(f"Ditt nåværende_beløp er {self.__nåværende_beløp} og maksbeløp er {self.__maksbeløp}")
+    
+    @property
+    def nåværende_beløp(self):
+        return self.nåværende_beløp
+    @property
+    def maksbeløp(self):
+        return self.__maksbeløp
 def main():
     HHermansen = Person("Hege", "Hermansen", "12309192")
 if __name__ == '__main__':
